@@ -102,6 +102,7 @@ public class Conversor {
 		//Si se ecuentra alguna coincidencia de -1
 		int posicionMenosUno=cadena.indexOf("-1");
 		if(posicionMenosUno!=-1) {
+			contadorLinea++;
 			//Si se encuentra reemplazará el -1 por 16
 			textoSinMenosUno=cadena.replace("-1", "16");
 			textoFormateado=contadorLinea+" data "+textoSinMenosUno;
