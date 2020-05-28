@@ -98,17 +98,20 @@ public class Conversor {
 	
 	private String formatearTexto(String cadena) {
 		String textoSinMenosUno="";
-		String textoFormateado="";
+		String textoFormateado=cadena;
+		//Si se ecuentra alguna coincidencia de -1
 		int posicionMenosUno=cadena.indexOf("-1");
 		if(posicionMenosUno!=-1) {
+			//Si se encuentra reemplazará el -1 por 16
 			textoSinMenosUno=cadena.replace("-1", "16");
-			textoFormateado=textoSinMenosUno;
+			textoFormateado=contadorLinea+" data "+textoSinMenosUno;
+   		}else {
+   			if(cadena!="" && cadena!=null && cadena.length()>0) {
+   				contadorLinea++;
+   				textoFormateado=contadorLinea+" data "+textoFormateado;
+   			}
    		}
-		if(cadena!="" && cadena!=null && cadena.length()>0) {
-			contadorLinea++;
-			textoFormateado=contadorLinea+" data "+textoFormateado;
-	   		
-		}
+
 		return textoFormateado;
 	}
 
